@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FORMA — демонстрационное портфолио студии дизайна интерьеров. Пространства для спокойной, красивой жизни.">
+  <title>FORMA — архитектура повседневности</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Перейти к содержимому</a>
+  <header class="header">
+    <a class="logo" href="#home" aria-label="FORMA — на главную">forma<span>®</span></a>
+    <button class="menu-toggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="navigation"><span></span><span></span></button>
+    <nav id="navigation" aria-label="Основная навигация">
+      <a href="#projects">Проекты</a><a href="#studio">О студии</a><a href="#contacts">Контакты <span>↗</span></a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="hero-top"><span class="eyebrow">Студия дизайна интерьеров</span><span class="hero-note">Пространство. Свет. Человек.</span></div>
+      <h1>Архитектура<br><span class="serif">повседневности.</span></h1>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2400&q=85" alt="Светлая гостиная с натуральными материалами и мягким диваном" fetchpriority="high">
+        <div class="image-caption"><span>Тишина в каждой детали</span><a href="#projects" aria-label="Перейти к проектам">↓</a></div>
+      </div>
+      <div class="hero-bottom"><span>Интерьеры вне времени</span><p>Создаём пространства, в которых<br>эстетика становится частью жизни.</p><a class="text-link" href="#projects">Смотреть проекты <span>↗</span></a></div>
+    </section>
+
+    <section class="projects section" id="projects">
+      <div class="section-heading reveal"><div><span class="eyebrow">01 / Портфолио</span><h2>Избранные <em>пространства</em></h2></div><span class="small-note">Демонстрационная коллекция / 2026</span></div>
+      <div class="filters" role="group" aria-label="Фильтр проектов"><button class="active" data-filter="all" aria-pressed="true">Все проекты <sup>04</sup></button><button data-filter="apartment" aria-pressed="false">Квартиры</button><button data-filter="house" aria-pressed="false">Загородные дома</button></div>
+      <div class="project-grid">
+        <button class="project reveal" data-category="apartment" data-project="0"><div class="project-image"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85" alt="Минималистичный интерьер с открытой планировкой" loading="lazy"><span class="project-open" aria-hidden="true">↗</span></div><div class="project-meta"><h3>Мягкая геометрия</h3><span>Квартира · 112 м²</span></div><span class="project-sub">Натуральные фактуры и чистые линии</span></button>
+        <button class="project reveal" data-category="house" data-project="1"><div class="project-image"><img src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=1200&q=85" alt="Просторная гостиная загородного дома в светлых тонах" loading="lazy"><span class="project-open" aria-hidden="true">↗</span></div><div class="project-meta"><h3>Ближе к природе</h3><span>Дом · 240 м²</span></div><span class="project-sub">Свет как главный элемент пространства</span></button>
+        <button class="project reveal" data-category="apartment" data-project="2"><div class="project-image"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85" alt="Современное жилое пространство с лаконичной мебелью" loading="lazy"><span class="project-open" aria-hidden="true">↗</span></div><div class="project-meta"><h3>Городская пауза</h3><span>Квартира · 86 м²</span></div><span class="project-sub">Личное убежище в ритме большого города</span></button>
+        <button class="project reveal" data-category="house" data-project="3"><div class="project-image"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85" alt="Сдержанный интерьер дома с натуральными отделочными материалами" loading="lazy"><span class="project-open" aria-hidden="true">↗</span></div><div class="project-meta"><h3>Естественный ритм</h3><span>Дом · 185 м²</span></div><span class="project-sub">Баланс деталей и свободного пространства</span></button>
+      </div>
+      <p class="demo-note">Концепции и фотографии представлены для примера оформления портфолио.</p>
+    </section>
+
+    <section class="studio section" id="studio">
+      <div class="studio-copy reveal"><span class="eyebrow">02 / Философия студии</span><h2>Меньше лишнего.<br><em>Больше смысла.</em></h2><p class="lead">Дом — это ощущение.<br>Мы помогаем придать ему форму.</p><p>В основе нашего подхода — внимание к вашему образу жизни. К тому, как начинается утро, где собираются близкие и в какой тишине хочется остаться вечером.</p><p>Мы соединяем продуманную планировку, тактильные материалы и естественный свет. Чтобы интерьер красиво выглядел и был удобным каждый день.</p><a class="text-link" href="#contacts">Познакомиться поближе <span>↗</span></a></div>
+      <div class="studio-photo reveal"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=85" alt="Детали спокойного интерьера с природными фактурами" loading="lazy"><span>Красота, которую можно почувствовать.</span></div>
+    </section>
+    <section class="process section"><div class="section-heading reveal"><div><span class="eyebrow">Наш подход</span><h2>От первого разговора<br>до <em>вашего пространства.</em></h2></div></div><div class="steps"><article class="reveal"><span>01</span><h3>Знакомство</h3><p>Обсуждаем ваши привычки, пожелания и характер будущего интерьера.</p></article><article class="reveal"><span>02</span><h3>Концепция</h3><p>Находим планировочное решение, палитру и материалы, близкие именно вам.</p></article><article class="reveal"><span>03</span><h3>Воплощение</h3><p>Разрабатываем детали и сопровождаем путь от идеи к готовому пространству.</p></article></div></section>
+    <section class="contacts section" id="contacts"><div class="contact-top"><span class="eyebrow">03 / Начнём диалог</span><span>Ваш следующий проект — здесь</span></div><h2 class="reveal">У каждого пространства<br>есть <em>своя история.</em><br>Расскажите вашу.</h2><div class="contact-bottom"><a class="contact-email" href="mailto:hello@forma.example">hello@forma.example <span>↗</span></a><p>Это демонстрационный адрес.<br>Замените его на свою рабочую почту.</p></div></section>
+  </main>
+  <footer><a class="logo" href="#home">forma<span>®</span></a><span>Демонстрационное портфолио · 2026</span><a href="#home">Наверх ↑</a></footer>
+  <dialog class="gallery" aria-labelledby="gallery-title"><div class="gallery-bar"><div><span class="eyebrow" id="gallery-label"></span><h2 id="gallery-title"></h2></div><button class="gallery-close" aria-label="Закрыть галерею">✕</button></div><div class="gallery-stage"><img id="gallery-image" alt=""><button class="gallery-prev" aria-label="Предыдущее фото">←</button><button class="gallery-next" aria-label="Следующее фото">→</button></div><div class="gallery-footer"><p id="gallery-description"></p><span id="gallery-count" aria-live="polite"></span></div><div class="gallery-thumbs" aria-label="Фотографии проекта"></div></dialog>
+</body>
+</html>
