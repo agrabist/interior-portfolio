@@ -14,12 +14,20 @@ document.querySelectorAll('[data-filter]').forEach(button => button.addEventList
   document.querySelectorAll('[data-filter]').forEach(item => { const active = item === button; item.classList.toggle('active', active); item.setAttribute('aria-pressed', String(active)); });
   document.querySelectorAll('.project').forEach(project => { project.hidden = button.dataset.filter !== 'all' && project.dataset.category !== button.dataset.filter; });
 }));
-const photo = id => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=1800&q=85`;
+const photo = path => `assets/images/${path}`;
+const placeholder = new URL(photo('placeholder.svg'), document.baseURI).href;
+// Capture also covers gallery images and thumbnails created after page load.
+document.addEventListener('error', event => {
+  const image = event.target;
+  if (image instanceof HTMLImageElement && image.src !== placeholder) {
+    image.src = placeholder;
+  }
+}, true);
 const projects = [
-  { title: 'Мягкая геометрия', label: 'Квартира / 112 м²', description: 'Демонстрационная концепция. Светлая палитра, открытая планировка и тактильные материалы.', photos: ['photo-1600607687920-4e2a09cf159d','photo-1600607687939-ce8a6c25118c','photo-1600566753086-00f18fb6b3ea'] },
-  { title: 'Ближе к природе', label: 'Загородный дом / 240 м²', description: 'Демонстрационная концепция. Пространство, наполненное воздухом, светом и природными фактурами.', photos: ['photo-1600210491892-03d54c0aaf87','photo-1600210492486-724fe5c67fb0','photo-1616486338812-3dadae4b4ace'] },
-  { title: 'Городская пауза', label: 'Квартира / 86 м²', description: 'Демонстрационная концепция. Спокойный интерьер для отдыха от насыщенного городского ритма.', photos: ['photo-1600607687939-ce8a6c25118c','photo-1600607687920-4e2a09cf159d','photo-1616486338812-3dadae4b4ace'] },
-  { title: 'Естественный ритм', label: 'Загородный дом / 185 м²', description: 'Демонстрационная концепция. Сдержанная геометрия, естественные оттенки и внимание к деталям.', photos: ['photo-1600566753086-00f18fb6b3ea','photo-1600210491892-03d54c0aaf87','photo-1600210492486-724fe5c67fb0'] }
+  { title: 'Мягкая геометрия', label: 'Квартира / 112 м²', description: 'Демонстрационная концепция. Светлая палитра, открытая планировка и тактильные материалы.', photos: ['project-1/01.svg', 'project-1/02.svg', 'project-1/03.svg'] },
+  { title: 'Ближе к природе', label: 'Загородный дом / 240 м²', description: 'Демонстрационная концепция. Пространство, наполненное воздухом, светом и природными фактурами.', photos: ['project-2/01.svg', 'project-2/02.svg', 'project-2/03.svg'] },
+  { title: 'Городская пауза', label: 'Квартира / 86 м²', description: 'Демонстрационная концепция. Спокойный интерьер для отдыха от насыщенного городского ритма.', photos: ['project-3/01.svg', 'project-3/02.svg', 'project-3/03.svg'] },
+  { title: 'Естественный ритм', label: 'Загородный дом / 185 м²', description: 'Демонстрационная концепция. Сдержанная геометрия, естественные оттенки и внимание к деталям.', photos: ['project-4/01.svg', 'project-4/02.svg', 'project-4/03.svg'] }
 ];
 const gallery = document.querySelector('.gallery');
 const galleryImage = document.querySelector('#gallery-image');
@@ -40,7 +48,7 @@ document.querySelectorAll('[data-project]').forEach(button => button.addEventLis
   document.querySelector('#gallery-label').textContent = project.label;
   document.querySelector('#gallery-description').textContent = project.description;
   thumbs.replaceChildren();
-  project.photos.forEach((id, index) => { const thumb = document.createElement('button'); thumb.setAttribute('aria-label', `Показать фото ${index + 1}`); const img = document.createElement('img'); img.src = `https://images.unsplash.com/${id}?auto=format&fit=crop&w=160&q=60`; img.alt = ''; thumb.append(img); thumb.addEventListener('click', () => showPhoto(index)); thumbs.append(thumb); });
+  project.photos.forEach((id, index) => { const thumb = document.createElement('button'); thumb.setAttribute('aria-label', `Показать фото ${index + 1}`); const img = document.createElement('img'); img.src = photo(id); img.alt = ''; thumb.append(img); thumb.addEventListener('click', () => showPhoto(index)); thumbs.append(thumb); });
   showPhoto(0); gallery.showModal(); document.body.style.overflow = 'hidden';
 }));
 document.querySelector('.gallery-close').addEventListener('click', () => gallery.close());

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200">
+  <rect width="1600" height="1200" fill="#e0e2dc"/>
+  <path d="M0 980 600 600l330 200 670-520v920H0Z" fill="#d9dbd4"/>
+  <path d="M600 600V0M930 800v400" stroke="#c9cec3" stroke-width="2"/>
+  <text x="800" y="520" text-anchor="middle" fill="#62695e" font-family="Arial,sans-serif" font-size="28" letter-spacing="3">ФОТОГРАФИЯ СКОРО</text>
+</svg>
